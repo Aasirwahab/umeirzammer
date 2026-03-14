@@ -1,4 +1,4 @@
-import { useState, type ElementType } from 'react';
+import { type ElementType } from 'react';
 import { cn } from '@/lib/utils';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useServiceParallax } from '@/hooks/useMouseParallax';
@@ -13,8 +13,8 @@ function getIcon(iconName: string): ElementType {
 }
 
 function EpisodeCard({ service, index }: { service: { iconName: string; title: string; description: string; image: string }; index: number }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const { containerRef, getTransform } = useServiceParallax();
+
+  const { containerRef } = useServiceParallax();
   const Icon = getIcon(service.iconName);
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
@@ -26,11 +26,11 @@ function EpisodeCard({ service, index }: { service: { iconName: string; title: s
       }}
       className={cn(
         'group relative overflow-hidden bg-white border border-exvia-border transition-all duration-700 ease-out-quart cursor-pointer hover:shadow-lg',
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
+        index > 0 && `delay-[${index * 100}ms]`
       )}
-      style={{ transitionDelay: `${index * 100}ms` }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {}}
+      onMouseLeave={() => {}}
     >
       {/* Image */}
       <div className="aspect-[16/10] overflow-hidden">
@@ -85,9 +85,9 @@ export function EpisodesPage() {
             <h2
               className={cn(
                 'text-h2 font-semibold text-exvia-black mt-4 transition-all duration-800 ease-out-quart',
-                headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6',
+                'delay-100'
               )}
-              style={{ transitionDelay: '100ms' }}
             >
               What I Create
             </h2>
