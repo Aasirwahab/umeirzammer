@@ -1,4 +1,4 @@
-// Site configuration for Umeir Zammer - Podcast Influencer Portfolio
+// Site configuration for Umair Zameer - Podcast Influencer Portfolio
 
 export interface SiteConfig {
   language: string;
@@ -8,8 +8,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   language: "en",
-  title: "Umeir Zammer | Podcast Host & Content Creator",
-  description: "Join Umeir Zammer on a journey of self-improvement, motivation, and comedy. Podcast host with 15K+ followers creating content that inspires and entertains.",
+  title: "Umair Zameer | Podcast Host & Content Creator",
+  description: "Join Umair Zameer on a journey of self-improvement, motivation, and comedy. Podcast host with 15K+ followers creating content that inspires and entertains.",
 };
 
 // Navigation configuration
@@ -26,15 +26,15 @@ export interface NavigationConfig {
 }
 
 export const navigationConfig: NavigationConfig = {
-  logo: "Umeir Zammer",
+  logo: "Umair Zameer",
   links: [
-    { label: "About", href: "#about" },
-    { label: "Episodes", href: "#episodes" },
-    { label: "Content", href: "#content" },
-    { label: "Community", href: "#community" },
+    { label: "About", href: "/about" },
+    { label: "Episodes", href: "/episodes" },
+    { label: "Content", href: "/content" },
+    { label: "Community", href: "/community" },
   ],
   contactLabel: "Get In Touch",
-  contactHref: "#contact",
+  contactHref: "/contact",
 };
 
 // Hero section configuration
@@ -45,7 +45,7 @@ export interface HeroConfig {
 }
 
 export const heroConfig: HeroConfig = {
-  name: "Umeir Zammer",
+  name: "Umair Zameer",
   roles: ["Podcast Host", "Content Creator", "Motivational Speaker", "Comedian"],
   backgroundImage: "/images/IMG-20260314-WA0023.jpg",
 };
@@ -72,7 +72,7 @@ export interface AboutConfig {
 
 export const aboutConfig: AboutConfig = {
   label: "About Me",
-  description: "I'm Umeir Zammer, a podcast host and content creator passionate about blending self-improvement with comedy. My mission is to inspire, motivate, and make you laugh while doing it. Through my podcast and social content, I've built a community of 15K+ followers who tune in for authentic conversations, life lessons, and a good dose of humor. Whether I'm interviewing inspiring guests or sharing my own journey, I believe growth should be enjoyable.",
+  description: "I'm Umair Zameer, a podcast host and content creator passionate about blending self-improvement with comedy. My mission is to inspire, motivate, and make you laugh while doing it. Through my podcast and social content, I've built a community of 15K+ followers who tune in for authentic conversations, life lessons, and a good dose of humor. Whether I'm interviewing inspiring guests or sharing my own journey, I believe growth should be enjoyable.",
   experienceValue: "3+",
   experienceLabel: "Years of\nPodcasting",
   stats: [
@@ -81,7 +81,7 @@ export const aboutConfig: AboutConfig = {
     { value: "50+", label: "Guest Interviews" },
   ],
   images: [
-    { src: "/images/IMG-20260314-WA0029.jpg", alt: "Umeir in podcast studio" },
+    { src: "/images/IMG-20260314-WA0029.jpg", alt: "Umair in podcast studio" },
     { src: "/images/IMG-20260314-WA0030.jpg", alt: "Desert adventure" },
     { src: "/images/IMG-20260314-WA0026.jpg", alt: "Podcast recording with guest" },
     { src: "/images/IMG-20260314-WA0019.jpg", alt: "Community meetup" },
@@ -225,7 +225,7 @@ export const testimonialsConfig: TestimonialsConfig = {
   heading: "What Listeners Say",
   testimonials: [
     {
-      quote: "Umeir's podcast is the perfect blend of motivation and humor. I start every morning with his episodes and it completely changed my mindset!",
+      quote: "Umair's podcast is the perfect blend of motivation and humor. I start every morning with his episodes and it completely changed my mindset!",
       author: "Sarah Ahmed",
       role: "Marketing Manager",
       company: "Dubai",
@@ -233,7 +233,7 @@ export const testimonialsConfig: TestimonialsConfig = {
       rating: 5,
     },
     {
-      quote: "Finally a self-improvement podcast that doesn't take itself too seriously. Umeir makes personal growth fun and accessible for everyone.",
+      quote: "Finally a self-improvement podcast that doesn't take itself too seriously. Umair makes personal growth fun and accessible for everyone.",
       author: "Mohammed Khan",
       role: "Entrepreneur",
       company: "Abu Dhabi",
@@ -241,7 +241,7 @@ export const testimonialsConfig: TestimonialsConfig = {
       rating: 5,
     },
     {
-      quote: "The guest interviews are incredible. Umeir has a way of making people open up and share their real stories. Highly recommend!",
+      quote: "The guest interviews are incredible. Umair has a way of making people open up and share their real stories. Highly recommend!",
       author: "Aisha Patel",
       role: "Content Creator",
       company: "Sharjah",
@@ -259,6 +259,7 @@ export interface CTAConfig {
   buttonText: string;
   buttonHref: string;
   email: string;
+  phone: string;
   backgroundImage: string;
 }
 
@@ -267,8 +268,9 @@ export const ctaConfig: CTAConfig = {
   heading: "Let's Create Something Amazing Together",
   description: "Whether you're looking for collaboration, sponsorship opportunities, or just want to say hello - I'd love to hear from you!",
   buttonText: "Get In Touch",
-  buttonHref: "mailto:umeir@zammer.podcast",
-  email: "umeir@zammer.podcast",
+  buttonHref: "mailto:umairzameer523@gmail.com",
+  email: "umairzameer523@gmail.com",
+  phone: "+971552833155",
   backgroundImage: "/images/IMG-20260314-WA0029.jpg",
 };
 
@@ -298,23 +300,23 @@ export interface FooterConfig {
 }
 
 export const footerConfig: FooterConfig = {
-  logo: "Umeir Zammer",
+  logo: "Umair Zameer",
   description: "Podcast host and content creator blending self-improvement with comedy. Inspiring 15K+ followers to grow, laugh, and live better.",
   columns: [
     {
       title: "Content",
       links: [
-        { label: "Latest Episodes", href: "#episodes" },
-        { label: "Popular Content", href: "#content" },
-        { label: "Guest Interviews", href: "#" },
-        { label: "Behind the Scenes", href: "#" },
+        { label: "Latest Episodes", href: "/episodes" },
+        { label: "Popular Content", href: "/content" },
+        { label: "Guest Interviews", href: "/episodes" },
+        { label: "Behind the Scenes", href: "/content" },
       ],
     },
     {
       title: "Connect",
       links: [
-        { label: "Instagram", href: "https://instagram.com" },
-        { label: "TikTok", href: "https://tiktok.com" },
+        { label: "Instagram", href: "https://www.instagram.com/umairzameer20" },
+        { label: "TikTok", href: "https://www.tiktok.com/@umairzameer_20" },
         { label: "YouTube", href: "https://youtube.com" },
         { label: "Spotify", href: "https://spotify.com" },
       ],
@@ -322,16 +324,16 @@ export const footerConfig: FooterConfig = {
     {
       title: "Collaborate",
       links: [
-        { label: "Sponsorships", href: "#contact" },
-        { label: "Guest Appearances", href: "#contact" },
-        { label: "Brand Partnerships", href: "#contact" },
-        { label: "Speaking Engagements", href: "#contact" },
+        { label: "Sponsorships", href: "/contact" },
+        { label: "Guest Appearances", href: "/contact" },
+        { label: "Brand Partnerships", href: "/contact" },
+        { label: "Speaking Engagements", href: "/contact" },
       ],
     },
   ],
   socialLinks: [
-    { iconName: "Instagram", href: "https://instagram.com", label: "Instagram" },
-    { iconName: "Video", href: "https://tiktok.com", label: "TikTok" },
+    { iconName: "Instagram", href: "https://www.instagram.com/umairzameer20", label: "Instagram" },
+    { iconName: "Video", href: "https://www.tiktok.com/@umairzameer_20", label: "TikTok" },
     { iconName: "Youtube", href: "https://youtube.com", label: "YouTube" },
     { iconName: "Music", href: "https://spotify.com", label: "Spotify" },
   ],
@@ -339,6 +341,6 @@ export const footerConfig: FooterConfig = {
   newsletterDescription: "Get weekly motivation, behind-the-scenes content, and exclusive updates delivered to your inbox.",
   newsletterButtonText: "Subscribe",
   newsletterPlaceholder: "Enter your email",
-  copyright: "© 2024 Umeir Zammer. All rights reserved.",
+  copyright: "© 2024 Umair Zameer. All rights reserved.",
   credit: "Created with passion and a lot of coffee ☕",
 };

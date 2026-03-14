@@ -1,39 +1,31 @@
-import { } from 'react';
-import { Navigation } from '@/components/Navigation';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from '@/components/Layout';
 import { PageOverlay } from '@/components/PageOverlay';
-import { Hero } from '@/sections/Hero';
-import { About } from '@/sections/About';
-import { Services } from '@/sections/Services';
-import { Portfolio } from '@/sections/Portfolio';
-import { Testimonials } from '@/sections/Testimonials';
-import { CTA } from '@/sections/CTA';
-import { Footer } from '@/sections/Footer';
 import { usePageLoad } from '@/hooks/usePageLoad';
+import { HomePage } from '@/pages/HomePage';
+import { AboutPage } from '@/pages/AboutPage';
+import { EpisodesPage } from '@/pages/EpisodesPage';
+import { ContentPage } from '@/pages/ContentPage';
+import { CommunityPage } from '@/pages/CommunityPage';
+import { ContactPage } from '@/pages/ContactPage';
 
 function App() {
   const { showOverlay } = usePageLoad(500);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Page Load Overlay */}
+    <BrowserRouter>
       <PageOverlay isVisible={showOverlay} />
-      
-      {/* Navigation */}
-      <Navigation />
-      
-      {/* Main Content */}
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <Testimonials />
-        <CTA />
-      </main>
-      
-      {/* Footer */}
-      <Footer />
-    </div>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/episodes" element={<EpisodesPage />} />
+          <Route path="/content" element={<ContentPage />} />
+          <Route path="/community" element={<CommunityPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -7,7 +7,9 @@
       "mcp__Claude_Preview__preview_start",
       "Bash(netstat -ano)",
       "Bash(taskkill //PID 17060 //F)",
-      "Bash(taskkill //PID 18932 //F)"
+      "Bash(taskkill //PID 18932 //F)",
+      "Bash(find 'D:\\\\Work new\\\\Kimi_Agent_Hero Image Desktop Fix\\\\app/src' -type f -name *.tsx -o -name *.ts -o -name *.jsx -o -name *.js)",
+      "Bash(taskkill //PID 2464 //F)"
     ]
   }
 }

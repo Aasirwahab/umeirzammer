@@ -1,5 +1,5 @@
-import { type MouseEvent } from 'react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ArrowUpRight } from 'lucide-react';
 import { footerConfig } from '@/config';
@@ -11,20 +11,38 @@ function getIcon(iconName: string): ElementType {
   return icons[iconName] || LucideIcons.Circle;
 }
 
+function FooterLink({ href, label }: { href: string; label: string }) {
+  const isInternal = href.startsWith('/');
+
+  if (isInternal) {
+    return (
+      <Link
+        to={href}
+        className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center gap-1 group"
+      >
+        {label}
+        <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center gap-1 group"
+      target={href.startsWith('http') ? '_blank' : undefined}
+      rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+    >
+      {label}
+      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+    </a>
+  );
+}
+
 export function Footer() {
   if (!footerConfig.logo && footerConfig.columns.length === 0 && footerConfig.socialLinks.length === 0) return null;
 
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
-
-  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
 
   return (
     <footer ref={ref} className="w-full bg-exvia-black text-white py-16 lg:py-24">
@@ -38,9 +56,9 @@ export function Footer() {
             )}
           >
             {footerConfig.logo && (
-              <a href="#" className="inline-block">
+              <Link to="/" className="inline-block">
                 <span className="text-2xl font-semibold tracking-tight">{footerConfig.logo}</span>
-              </a>
+              </Link>
             )}
             {footerConfig.description && (
               <p className="text-sm text-white/60 max-w-xs leading-relaxed">
@@ -84,14 +102,7 @@ export function Footer() {
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className="text-sm text-white/70 hover:text-white transition-colors inline-flex items-center gap-1 group"
-                    >
-                      {link.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
-                    </a>
+                    <FooterLink href={link.href} label={link.label} />
                   </li>
                 ))}
               </ul>
