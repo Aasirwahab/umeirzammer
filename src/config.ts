@@ -317,8 +317,6 @@ export const footerConfig: FooterConfig = {
       links: [
         { label: "Instagram", href: "https://www.instagram.com/umairzameer20" },
         { label: "TikTok", href: "https://www.tiktok.com/@umairzameer_20" },
-        { label: "YouTube", href: "https://youtube.com" },
-        { label: "Spotify", href: "https://spotify.com" },
       ],
     },
     {
@@ -334,8 +332,6 @@ export const footerConfig: FooterConfig = {
   socialLinks: [
     { iconName: "Instagram", href: "https://www.instagram.com/umairzameer20", label: "Instagram" },
     { iconName: "Video", href: "https://www.tiktok.com/@umairzameer_20", label: "TikTok" },
-    { iconName: "Youtube", href: "https://youtube.com", label: "YouTube" },
-    { iconName: "Music", href: "https://spotify.com", label: "Spotify" },
   ],
   newsletterHeading: "Join the Community",
   newsletterDescription: "Get weekly motivation, behind-the-scenes content, and exclusive updates delivered to your inbox.",

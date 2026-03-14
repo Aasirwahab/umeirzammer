@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Mail, Phone, Instagram, Youtube, Music, Video, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, Instagram, Video, ArrowUpRight } from 'lucide-react';
 import { ctaConfig, footerConfig } from '@/config';
 import { PageHero } from '@/components/PageHero';
 
@@ -97,8 +97,6 @@ export function ContactPage() {
                       <div className="w-10 h-10 border border-exvia-border rounded-full flex items-center justify-center group-hover:bg-exvia-black group-hover:text-white group-hover:border-exvia-black transition-all duration-300">
                         {social.label === 'Instagram' && <Instagram className="w-4 h-4" />}
                         {social.label === 'TikTok' && <Video className="w-4 h-4" />}
-                        {social.label === 'YouTube' && <Youtube className="w-4 h-4" />}
-                        {social.label === 'Spotify' && <Music className="w-4 h-4" />}
                       </div>
                       <span className="text-sm font-medium">{social.label}</span>
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
