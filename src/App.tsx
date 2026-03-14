@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
-import { PageOverlay } from '@/components/PageOverlay';
+import { Preloader } from '@/components/Preloader';
 import { usePageLoad } from '@/hooks/usePageLoad';
 import { HomePage } from '@/pages/HomePage';
 import { AboutPage } from '@/pages/AboutPage';
@@ -10,11 +10,11 @@ import { CommunityPage } from '@/pages/CommunityPage';
 import { ContactPage } from '@/pages/ContactPage';
 
 function App() {
-  const { showOverlay } = usePageLoad(500);
+  const { showOverlay, setShowOverlay } = usePageLoad();
 
   return (
     <BrowserRouter>
-      <PageOverlay isVisible={showOverlay} />
+      {showOverlay && <Preloader onComplete={() => setShowOverlay(false)} />}
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
